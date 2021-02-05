@@ -1,24 +1,20 @@
-# PHP-Advanced-Eindtaak
+# PHP-ADVANCED - MODULEOPDRACHT
 
-## Titel
+## Uitleg
 
-> ## Eindtaak PHP-Advanced
-
-In deze eindtaak krijgen jullie een opdracht met technieken die in de verschillende delen van PHP Advanced zijn behandeld. Niet alle technieken komen aan bod, maar in ieder geval één belangrijke per subonderdeel. De onderdelen van deze module waren:
+In deze moduleopdracht krijg je een opdracht met technieken die in de verschillende delen van PHP Advanced zijn behandeld. Niet alle technieken komen aan bod, maar in ieder geval één belangrijke per subonderdeel. De onderdelen van deze module waren:
 
 - Associatieve Array's
 - Loops
-    - while loop
-    - for loop
-    - foreach loop
+  - while loop
+  - for loop
+  - foreach loop
 - Form handling
-    - POST
-    - GET
-- Functions 
-    - met argumenten
-    - return
-
-## Uitleg
+  - POST
+  - GET
+- Functions
+  - met argumenten
+  - return
 
 De opdracht is om een kleine pagina te maken met informatie over jezelf. Deze wordt op een mooie manier weergegeven op basis van een formulier waar je stylen kunt aangeven. Na versturing wordt het cv in een tweede scherm getoond.
 
@@ -26,41 +22,57 @@ Dus eerst zie je een formulier in je browser waarin je kunt instellen hoe de pag
 
 De opdracht bestaat uit twee stappen. In de eerste stap (Opdracht 1) maak je al de gehele functionaliteit van de applicatie. In de tweede stap (opdracht 2) ga je aan de slag om dezelfde applicatie op een andere manier (met aangepaste code) uit te voeren.
 
+## Opdracht 1 - Formulier maken en resultaat tonen
 
-## Leerdoelen
-
-1. [ ] De student kan de verschillende behandelde PHP-technieken toepassen en combineren tot één geheel
-
-
-## Opdracht 1
-
-1. [ ] Maak twee bestanden aan, genaamd advanced-1.php en advanced-2.php
+1. [ ] Maak twee bestanden aan, genaamd formulier.php en resultaat.php
 2. [ ] Plaats in beide bestanden standaard HTMLpagina code. Dit omdat beide bestanden als pagina in de browser moeten worden getoond
-3. [ ] Maak in het bestand advanced-1.php een formulier aan waarin je de volgende input fields plaatst:
-a. tekstkleur 
-dit is een sellectbox die dmv een foreach loop wordt gemaakt van de volgende array:
-~~~php
-$kleuren = array("red", "blue", "green", "black", "brown")
-~~~
-b. achtergrondkleur van de pagina (maak ook hier gebruik van de array $kleuren)
-c. tabel-border dikte
-d. padding (in pixels voor de tabelcel)
-4. een verstuurknop
-4. [ ] De ingevoerde data van het formulier worden verstuurd (gePOST) naar het bestand advanced-2.php
-5. [ ] In advanced-2.php maak je een associatieve array aan met gegevens over jezelf. Bijvoorbeeld: naam, leeftijd, muzieksmaak, woonplaats, sport, etc.
-6. [ ] Met een foreach loop doorloop je deze gemaakte array en maak je hiervan een tabel
-7. [ ] De stijl van deze tabel en inhoud wordt bepaald door de data die is verstuurd met het formulier in advanced-1.php
-8. [ ] Als dit helemaal werkt ga je verder met de tweede opdracht. Dit is een uitbreiding van deze opdracht
+3. [ ] Maak in het bestand formulier.php een formulier (method = POST)aan waarin je de volgende html elementen plaatst:
 
-## Opdracht 2
+   - input met text waar een voornaam ingevuld kan worden
+   - input met text waar een achternaam ingevuld kan worden
+   - input met number waar een leeftijd ingevuld kan worden
+   - naast deze input velden heb je ook een button nodig met type=submit
 
-1. [ ] In opdracht 1 heb je een tabelgemaakt, waarbij in een foreach loop steeds een tabelrij werd gemaakt. Nu vervang je de code in de foreach loop met de aanroep van een functie met de naam maakRij()
-2. [ ] In het bestand advanced-2.php maak je een functie met de naam maakRij die twee argumenten kan meekrijgen. In deze functie wordt de tabelrij geschreven die in opdracht 1 in de foreach loop stond
-3. [ ] Binnen de foreach loop roep je de functie maakRij dus aan met twee argumenten die de key en de value zijn van de array met jouw gegevens
+4. [ ] Zorg ervoor dat de ingevulde gegevens op resultaat.php zichtbaar worden
 
-## Eindresultaat
+## Opdracht 2 - CSS opvragen en gebruiken
 
-![Eindresultaat](https://github.com/ROC-van-Amsterdam-College-Amstelland/PHP-ADVANCED/blob/master/opdracht/images/resultaat.png)
+Je kunt ook andere gegevens vragen aan de gebruiker van je mini-applicatie. Bijvoorbeeld CSS waardes. Deze `echo` je dan in het CSS deel van de pagina.
+
+1. [ ] Maak de volgende array aan:  
+
+    ```php
+    $kleuren = array("red", "blue", "green", "black", "brown")
+    ```
+
+2. [ ] De bedoeling is nu een onderdeel toe te voegen aan het bestaande formulier.  Met een foreach-loop kun je door de array loopen en de waardes dien je in het formulier te tonen op zo'n wijze dat je gebruiker deze kan kiezen, je kunt dit doen met een `<SELECT>` of `<input type="radio">`, die keuze mag je zelf maken. Het gaat erom dat je dit onderdeel dynamisch (dus met php) in het formulier maakt.
+3. [ ] De gekozen kleur moet je gebruiken om achtergrondkleur van resultaat.php aan te passen. Gebruik CSS!
+
+## Opdracht 2 - Tekstkleur aanpassen
+
+1. [ ] Maak wederom gebruik van de kleuren array
+2. [ ] Schrijf code waarmee je een van deze kleuren kan kiezen in het formulier
+3. [ ] Schrijf code die de gekozen kleur in resultaat.php laat zien, de tekstkleur moet veranderen
+
+## Opdracht 3 - Een array van lettertypes
+
+1. [ ] Maak een array van de volgende lettertypes
+    - `Gill Sans Extrabold, sans-serif`
+    - `Verdana, Arial, Helvetica, sans-serif`
+    - `Times, Times New Roman, Georgia, serif`
+    - `Lucida Console, Courier, monospace`
+
+2. [ ] Schrijf code waarmee je een van deze lettertypes kan kiezen in het formulier
+3. [ ] Schrijf code die het gekozen lettertype in resultaat.php laat zien
+
+## Opdracht 4 - Toon alle gekozen waardes
+
+1. [ ] Het gehele formulier bevat, na het invullen bepaalde waardes, schrijf code waarmee je alle gekzoen waardes netjes in een tabel toont, gebruik een foreach-loop
+
+## Opdracht 5 - Check de leeftijd van de persoon
+
+1. [ ] Schrijf code waarmee je checkt of de opgegeven leeftijd grote is dan 18.
+2. [ ] Als de persoon jonger is dan toon je volgende tekst: "Je bent jonger dan 18 jaar oud"
 
 ## Bronnen
 
